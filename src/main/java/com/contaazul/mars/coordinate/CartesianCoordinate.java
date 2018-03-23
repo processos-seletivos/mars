@@ -1,16 +1,19 @@
 package com.contaazul.mars.coordinate;
 
+/**
+ * Classe que representa uma coordenada cartesiana (X,Y)
+ */
 public class CartesianCoordinate extends AbstractCoordinate {
     Long x;
     Long y;
 
-    CartesianCoordinate(Long x, Long y){
+    public CartesianCoordinate(Long x, Long y){
         this.x = x;
         this.y = y;
     }
 
     @Override
-    public Coordinate applyTransformation(Coordinate transformation) {
+    public CartesianCoordinate applyTransformation(Coordinate transformation) throws InvalidTransformationTypeException {
         CartesianCoordinate cartesianTransformation = null;
         CartesianCoordinate newCoordinate = null;
         try {
@@ -22,15 +25,24 @@ public class CartesianCoordinate extends AbstractCoordinate {
 
         }
         catch (Exception e) {
-            //TODO: Launch transformation exception
+            throw  new InvalidTransformationTypeException("O tipo da transformação é diferente de Cartesiana");
         }
         return newCoordinate;
     }
 
-    Long getX(){
+    /**
+     * Método para obter a posição no eixo x
+     * @return Posição no eixo x
+     */
+    public Long getX(){
         return this.x;
     }
-    Long getY(){
-        return this.x;
+
+    /**
+     * Método para obter a posição no eixo y
+     * @return Posição no eixo y
+     */
+    public Long getY(){
+        return this.y;
     }
 }

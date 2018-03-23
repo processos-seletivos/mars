@@ -1,5 +1,22 @@
 # mars
-Projeto para controle de robôs
+Projeto para controle de robôs, por meio de envio de sequencias de caracteres, em que cada caracter corresponde a um determinado comando, conforme a tabela a seguir:
+
+| Comando        | Significado                                                 |
+|----------------|-------------------------------------------------------------|
+| M              | Move o robô 1 unidade para frente na direção em que estiver |
+| L              | Vira o robô 90 graus para a esquerda                        |
+| R              | Vira o robô 90 graus para a direita                         |
+| Qualquer outro | Comando inválido                                            |
+
+
+### Considerações
+
+Foi permitida a possibilidade de gerenciar mais de um robô. A classe responsável por gerenciar robôs é a classe MarsRobotPlanner. Basta criar um robô e chamar o método manageRobot desse modo:
+
+```java
+marsRobotPlanner.manageRobot(marsRobot);
+```
+Essa classe avalia se a sequencia de comandos enviada para o robô é válida, antes de efetivamente repassar os comandos para o robô. Ela verifica se a coordenada é válida, além de verificar se existe algum robô no caminho do robô gerenciado.
 
 ### Como executar a aplicação
 

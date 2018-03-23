@@ -12,10 +12,8 @@ import java.util.List;
  */
 public interface RobotPlanner {
 
-    public void manageRobot(Robot robot) throws Exception;
-    public Boolean validPosition(Coordinate coordinate);
-    public void sendCommandListToRobot(String code, List<Command> decodedCommands) throws InvalidPositionException, InvalidTransformationTypeException;
-
-
-    void removeRobot(Robot robot) throws RobotNotRegisteredException;
+    public Boolean manageRobot(Robot robot) throws Exception;
+    public Boolean validPosition(Coordinate coordinate, Robot robot);
+    public void sendCommandListToRobot(String code, List<Command> decodedCommands) throws InvalidPositionException, InvalidTransformationTypeException, RobotNotRegisteredException;
+    public Boolean removeRobot(Robot robot) throws RobotNotRegisteredException;
 }

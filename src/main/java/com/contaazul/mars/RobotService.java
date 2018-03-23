@@ -2,6 +2,7 @@ package com.contaazul.mars;
 
 import com.contaazul.mars.coordinate.InvalidTransformationTypeException;
 import com.contaazul.mars.planner.InvalidPositionException;
+import com.contaazul.mars.planner.InvalidRobotException;
 import com.contaazul.mars.planner.RobotAlreadyRegisteredException;
 import com.contaazul.mars.planner.RobotNotRegisteredException;
 import com.contaazul.mars.robot.command.InvalidCommandException;
@@ -21,5 +22,5 @@ public interface RobotService {
      */
     public String sendCommands(String robotCode, String commands) throws IllegalAccessException, InvalidCommandException,
             InstantiationException, InvalidPositionException, RobotAlreadyRegisteredException,
-            RobotNotRegisteredException, InvalidTransformationTypeException;
+            RobotNotRegisteredException, InvalidTransformationTypeException, InvalidRobotException;
 }

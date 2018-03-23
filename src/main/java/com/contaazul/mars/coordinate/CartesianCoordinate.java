@@ -1,6 +1,6 @@
 package com.contaazul.mars.coordinate;
 
-import com.contaazul.mars.MarsController;
+import com.contaazul.mars.MarsRobotController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
  * Classe que representa uma coordenada cartesiana (X,Y)
  */
 public class CartesianCoordinate extends AbstractCoordinate {
-    private static final Logger logger = LoggerFactory.getLogger(MarsController.class);
+    private static final Logger logger = LoggerFactory.getLogger(MarsRobotController.class);
     Long x;
     Long y;
 

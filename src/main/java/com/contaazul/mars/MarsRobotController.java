@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Controller utilizado para a comunicação com os robôs
  */
-public class MarsController {
+public class MarsRobotController {
 
-    private static final Logger logger = LoggerFactory.getLogger(MarsController.class);
+    private static final Logger logger = LoggerFactory.getLogger(MarsRobotController.class);
     @Autowired
     MarsRobotService marsRobotService;
 

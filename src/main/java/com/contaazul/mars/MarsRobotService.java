@@ -3,7 +3,6 @@ package com.contaazul.mars;
 
 import com.contaazul.mars.coordinate.CartesianCoordinate;
 import com.contaazul.mars.coordinate.InvalidTransformationTypeException;
-import com.contaazul.mars.map.CartesianMap;
 import com.contaazul.mars.orientation.NorthOrientation;
 import com.contaazul.mars.planner.InvalidPositionException;
 import com.contaazul.mars.planner.MarsRobotPlanner;
@@ -19,22 +18,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MarsRobotService {
+public class MarsRobotService implements RobotService{
 
     @Autowired
     MarsRobotPlanner marsRobotPlanner;
 
-    /**
-     * Método responsável por enviar os comandos para um determinado robô, que é definido pelo código que é passado
-     * como parâmetro
-     * @param commands String contendo a lista de comandos
-     * @return A posição atual do robô após a execução dos comandos
-     * @throws IllegalAccessException
-     * @throws InvalidCommandException Exceção lançada quando existe um comando inválido
-     * @throws InstantiationException
-     * @throws InvalidPositionException Exceção lançada quando a sequência de comandos conduz um robô a uma posição
-     * inválida.
-     */
+    @Override
     public String sendCommands(String robotCode, String commands) throws IllegalAccessException, InvalidCommandException,
             InstantiationException, InvalidPositionException, RobotAlreadyRegisteredException,
             RobotNotRegisteredException, InvalidTransformationTypeException {

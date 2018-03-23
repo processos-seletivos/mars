@@ -1,9 +1,14 @@
 package com.contaazul.mars.coordinate;
 
+import com.contaazul.mars.MarsController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Classe que representa uma coordenada cartesiana (X,Y)
  */
 public class CartesianCoordinate extends AbstractCoordinate {
+    private static final Logger logger = LoggerFactory.getLogger(MarsController.class);
     Long x;
     Long y;
 
@@ -13,7 +18,7 @@ public class CartesianCoordinate extends AbstractCoordinate {
     }
 
     @Override
-    public CartesianCoordinate applyTransformation(Coordinate transformation) throws InvalidTransformationTypeException {
+    public CartesianCoordinate applyTransformation(Coordinate transformation){
         CartesianCoordinate cartesianTransformation = null;
         CartesianCoordinate newCoordinate = null;
         try {
@@ -25,7 +30,8 @@ public class CartesianCoordinate extends AbstractCoordinate {
 
         }
         catch (Exception e) {
-            throw  new InvalidTransformationTypeException("O tipo da transformação é diferente de Cartesiana");
+            logger.error("Nao foi possível aplicar a transformação pelo seguinte motivo: " + e.getMessage());
+            return this;
         }
         return newCoordinate;
     }

@@ -1,6 +1,7 @@
 package com.contaazul.mars.robot;
 
 import com.contaazul.mars.coordinate.Coordinate;
+import com.contaazul.mars.coordinate.InvalidTransformationTypeException;
 import com.contaazul.mars.orientation.Orientation;
 import com.contaazul.mars.robot.command.Command;
 

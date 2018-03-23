@@ -42,9 +42,7 @@ public abstract class AbstractRobotPlanner implements RobotPlanner{
      */
     public void sendCommandListToRobot(String code, List<Command> decodedCommands) throws InvalidPositionException, InvalidTransformationTypeException {
         Robot robot = robots.get(code);
-        decodedCommands.stream().forEach((Command command) -> {
-            robot.executeCommand(command);
-        });
+        decodedCommands.stream().forEach((Command command) -> robot.executeCommand(command));
 
     }
 

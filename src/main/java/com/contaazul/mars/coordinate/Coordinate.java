@@ -14,5 +14,5 @@ public interface Coordinate {
      * da coordenada
      */
 
-    public Coordinate applyTransformation(Coordinate transformation) throws InvalidTransformationTypeException;
+    public Coordinate applyTransformation(Coordinate transformation);
 }

@@ -15,7 +15,7 @@ public class MarchCommand extends AbstractCommand {
     }
 
     @Override
-    public CartesianCoordinate getNewCoordinate(Coordinate currentCoordinate, Orientation currentOrientation) throws InvalidTransformationTypeException {
+    public CartesianCoordinate getNewCoordinate(Coordinate currentCoordinate, Orientation currentOrientation) {
         switch (currentOrientation.getValue()) {
             case "N":
                 return (CartesianCoordinate)currentCoordinate.applyTransformation(new CartesianCoordinate(0l,1l));

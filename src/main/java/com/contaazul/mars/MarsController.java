@@ -33,7 +33,7 @@ public class MarsController {
     @PostMapping(value={ "/rest/mars", "/rest/mars/{commands}"})
     public String mars(
             HttpServletResponse response,
-            @PathVariable(required = false) String commands, @RequestParam("robotCode") String code)  {
+            @PathVariable(required = false) String commands, @RequestParam(value = "robotCode", required = false) String code)  {
         String retorno = "";
         try {
             String robotCode = (code!=null)?code:"robot1";

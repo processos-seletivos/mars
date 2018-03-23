@@ -2,6 +2,7 @@ package com.contaazul.mars.robot;
 
 import com.contaazul.mars.coordinate.CartesianCoordinate;
 import com.contaazul.mars.coordinate.Coordinate;
+import com.contaazul.mars.coordinate.InvalidTransformationTypeException;
 import com.contaazul.mars.orientation.Orientation;
 import com.contaazul.mars.robot.command.Command;
 import org.slf4j.Logger;
@@ -19,7 +20,7 @@ public class MarsRobot extends AbstractRobot{
     }
 
     @Override
-    public void executeCommand(Command command) {
+    public void executeCommand(Command command){
         logger.debug("Posição antes de executar o comando da classe " + command.getClass() + ":" + this.getCurrentPositonAndOrientation());
         this.coordinate = command.getNewCoordinate(this.getCoordinate(), this.getOrientation());
         this.orientation = command.getNewOrientation(this.getOrientation());

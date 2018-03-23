@@ -23,5 +23,5 @@ public interface Command {
      * @return Nova coordenada após a aplicação do comando
      * @throws InvalidTransformationTypeException
      */
-    public Coordinate getNewCoordinate(Coordinate currentCoordinate, Orientation currentOrientation) throws InvalidTransformationTypeException;
+    public Coordinate getNewCoordinate(Coordinate currentCoordinate, Orientation currentOrientation);
 }
